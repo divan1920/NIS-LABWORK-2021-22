@@ -1,4 +1,4 @@
-#include "functions.h"
+#include "../functions.h"
 #define point pair<int,int>
 
 
@@ -10,8 +10,8 @@ point addP(int scalar,point p1,int a,int p)
     {
         int x1 = p1.first,y1=p1.second;
         int lamda = (((3*power(x1,2))+a)*multiplicativeInverse(2*y1,p)) % p;
-        int x3 = moduloP((power(lamda,2) - 2*x1), p);
-        int y3 = moduloP((lamda*(x1-x3)-y1),p);
+        int x3 = doModP((power(lamda,2) - 2*x1), p);
+        int y3 = doModP((lamda*(x1-x3)-y1),p);
         cout<<"x3: "<<x3<<" y3:"<<y3<<endl;
         return make_pair(x3,y3);
     }
@@ -29,7 +29,7 @@ vector<point> pointGeneration(int a,int b,int p)
             while(sqrt(w)*sqrt(w) != w)
                 w+=p;
             points.push_back(make_pair(x,sqrt(w)));
-            points.push_back((make_pair(x,moduloP(-sqrt(w),p))));   
+            points.push_back((make_pair(x, doModP(-sqrt(w), p))));
         }
         //point on the curve
         else if(rem == 0)

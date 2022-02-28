@@ -1,4 +1,4 @@
-#include "functions.h"
+#include "../functions.h"
 #include <bits/stdc++.h>
 using namespace std;
 

@@ -64,3 +64,22 @@ int power(int x,int pow)
     else
         return x*power(x,pow-1);
 }
+
+int doModP(int num,int p)
+{
+    while (num < p)
+        num += p;
+    return num % p;
+}
+
+bool isPrime(int num)
+{
+    if (num <= 1)
+        return false;
+    for (int i = 2; i <= sqrt(num); ++i)
+    {
+        if (num % i == 0)
+            return false;
+    }
+    return true;
+}

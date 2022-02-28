@@ -1,4 +1,5 @@
-#include "functions.h"
+#include "../functions.h"
+
 
 /**************************************************************************************
 --> This is code for elgamal cryptosystem.

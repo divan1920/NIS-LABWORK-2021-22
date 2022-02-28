@@ -1,4 +1,5 @@
-#include "functions.h"
+#include "../functions.h"
+
 #define matrix vector<vector<int>>
 
 /**
